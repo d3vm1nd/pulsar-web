@@ -1,0 +1,64 @@
+---
+import Layout from "../layouts/Layout.astro";
+import BalanceMonth from "../components/BalanceMonth.svelte";
+import BalanceYear from "../components/BalanceYear.svelte";
+import Budget from "../components/Budget.svelte";
+import ReportBalanceMonth from "../components/ReportBalanceMonth.svelte";
+import ReportBalanceYear from "../components/ReportBalanceYear.svelte";
+import StatusResult from "../components/StatusResult.svelte";
+
+const host = "HOST";
+---
+
+<Layout title="Pulsar Web">
+	<div class="row">
+		<div class="column">
+			<StatusResult
+				title="Estado"
+				subtitle="De Resultados"
+				host={host}
+				client:load
+			/>
+		</div>
+		<div class="column">
+			<BalanceMonth
+				title="Balance"
+				subtitle="Mensual"
+				host={host}
+				client:load
+			/>
+		</div>
+		<div class="column">
+			<BalanceYear
+				title="Balance"
+				subtitle="Anual"
+				host={host}
+				client:load
+			/>
+		</div>
+		<div class="column">
+			<Budget
+				title="Reporte"
+				subtitle="Presupuesto"
+				host={host}
+				client:load
+			/>
+		</div>
+		<div class="column">
+			<ReportBalanceMonth
+				title="Reporte"
+				subtitle="Balance Mensual"
+				host={host}
+				client:load
+			/>
+		</div>
+		<div class="column">
+			<ReportBalanceYear
+				title="Reporte"
+				subtitle="Balance Anual"
+				host={host}
+				client:load
+			/>
+		</div>
+	</div>
+</Layout>

@@ -1,0 +1,141 @@
+---
+interface Props {
+	title: string;
+}
+
+const { title } = Astro.props;
+---
+
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="description" content="Astro description" />
+		<meta name="viewport" content="width=device-width" />
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<meta name="generator" content={Astro.generator} />
+		<title>{title}</title>
+	</head>
+	<body>
+		<slot />
+	</body>
+</html>
+<style is:global>
+	* {
+		box-sizing: border-box;
+	}
+
+	body {
+		border: 0px;
+		padding-right: 15%;
+		padding-left: 15%;
+		font-family: Arial, Helvetica, sans-serif;
+		background-color: rgb(96, 153, 102);
+	}
+
+	.column {
+		float: left;
+		width: 30%;
+		padding: 0 10px;
+	}
+
+	.row {
+		margin: 0 -5px;
+	}
+
+	.row:after {
+		content: "";
+		display: table;
+		clear: both;
+	}
+
+	.card {
+		box-shadow: 0 4px 8px 0 rgba(31, 62, 20, 0.5); /* this adds the "card" effect */
+		background-color: rgb(237, 241, 214);
+		height: 274.5px;
+		margin: 7px 0;
+		border-radius: 6px;
+	}
+
+	input {
+		width: 100%;
+	}
+
+	.card-body {
+		margin: 20px 0px 0px 0px;
+	}
+
+	.card-title {
+		font-family: "Roboto", sans-serif;
+		font-weight: bolder;
+		font-size: x-large;
+		padding: 4%;
+		text-align: left;
+		background-color: rgb(64, 81, 59);
+		color: rgb(237, 241, 214);
+		border-radius: 6px 6px 0px 0px;
+	}
+
+	.card-body-row {
+		margin: 0;
+	}
+
+	.card-body-row:after {
+		content: "";
+		display: table;
+		clear: both;
+	}
+
+	.card-body-column {
+		float: left;
+		width: 50%;
+		padding: 0 10px;
+		text-align: left;
+	}
+
+	a:link,
+	a:visited {
+		background-color: rgb(96, 153, 102);
+		color: rgb(237, 241, 214);
+		padding: 10px 20px;
+		border-radius: 4px;
+		text-align: center;
+		text-decoration: none;
+		display: inline-block;
+	}
+
+	a:hover,
+	a:active {
+		background-color: rgb(157, 192, 139);
+		color: rgb(237, 241, 214);
+	}
+
+	.center {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+	}
+
+	.form {
+		height: 100px;
+	}
+
+	input {
+		font-family: "Roboto", sans-serif;
+		color: #333;
+		margin: 0 auto;
+		border-radius: 0.2rem;
+		background-color: rgb(255, 255, 255);
+		border: none;
+		display: block;
+		transition: all 0.3s;
+	}
+
+	@media screen and (max-width: 600px) {
+		.column {
+			width: 100%;
+			display: block;
+			margin-bottom: 20px;
+		}
+	}
+</style>
